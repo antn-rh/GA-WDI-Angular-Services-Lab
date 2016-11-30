@@ -3,7 +3,7 @@
   angular.module('todosApp')
     .controller('TodosController', TodosController)
 
-  function TodosController($scope) {
+  function TodosController($scope, $log) {
 
     $scope.allTodos = [
       {description: "Buy groceries", completed: true, image: "http://msbusiness.com/wp-content/uploads/2015/10/groceries.jpg"},
@@ -12,6 +12,8 @@
       {description: "Take out the trash", completed: false, image: "http://www.usnews.com/dims4/USNEWS/078a123/2147483647/resize/970x/quality/85/?url=%2Fcmsmedia%2Ffc%2Fc1%2F5fe5c5ef4747a0074516bdead270%2F150601-editorial.jpg"},
       {description: "Call mom", completed: false, image: "https://www.iapps4you.com/images/apps/77/77519/logo.jpg"},
     ];
+
+    $log.log($scope.allTodos)
 
     $scope.addTodo = addTodo;
     $scope.newTodo = {description: "", completed: false, image: ""};
