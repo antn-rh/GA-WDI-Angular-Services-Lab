@@ -4,22 +4,22 @@
     <link rel="stylesheet" href="/css/styles.css" media="screen" title="no title">
     <title>Todos App</title>
   </head>
-  <body ng-controller="TodosController as todosVm">
+  <body ng-controller="TodosController">
     <h1>Create a todo</h1>
-    <form ng-submit="todosVm.addTodo()">
-      <label for="todosVm.newTodo.description">Todo Description: </label>
-      <input ng-model="todosVm.newTodo.description" type="text" name="name" value="" placeholder="Description">
+    <form ng-submit="addTodo()">
+      <label for="newTodo.description">Todo Description: </label>
+      <input ng-model="newTodo.description" type="text" name="name" value="" placeholder="Description">
       <br>
-      <label for="todosVm.newTodo.image">Todo Image URL: </label>
-      <input ng-model="todosVm.newTodo.image" type="text" name="name" value="" placeholder="Image URL">
+      <label for="newTodo.image">Todo Image URL: </label>
+      <input ng-model="newTodo.image" type="text" name="name" value="" placeholder="Image URL">
       <br>
-      <label for="todosVm.newTodo.completed">Completed: </label>
-      <input ng-model="todosVm.newTodo.completed" type="checkbox" name="name" value="" placeholder="">
+      <label for="newTodo.completed">Completed: </label>
+      <input ng-model="newTodo.completed" type="checkbox" name="name" value="" placeholder="">
       <br>
       <input type="submit" name="name" value="Submit">
     </form>
     <h1>List of todos</h1>
-    <ul ng-repeat="todo in todosVm.allTodos">
+    <ul ng-repeat="todo in allTodos">
       <li>
         <p ng-class="{strike: todo.completed}">{{ todo.description }}</p>
         <p>Completed: <input type="checkbox" ng-model="todo.completed"></p>

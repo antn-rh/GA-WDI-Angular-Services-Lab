@@ -3,10 +3,9 @@
   angular.module('todosApp')
     .controller('TodosController', TodosController)
 
-  function TodosController() {
-    var vm = this;
+  function TodosController($scope) {
 
-    vm.allTodos = [
+    $scope.allTodos = [
       {description: "Buy groceries", completed: true, image: "http://msbusiness.com/wp-content/uploads/2015/10/groceries.jpg"},
       {description: "Walk the dog", completed: false, image: "https://uproxx.files.wordpress.com/2015/01/dog-walking.jpg?quality=90&w=650&h=444"},
       {description: "Wash the dishes", completed: false, image: "http://myfirsthomeblog.com/wp-content/uploads/2016/03/Washing-Dishes.jpg"},
@@ -14,12 +13,12 @@
       {description: "Call mom", completed: false, image: "https://www.iapps4you.com/images/apps/77/77519/logo.jpg"},
     ];
 
-    vm.addTodo = addTodo;
-    vm.newTodo = {description: "", completed: false, image: ""};
+    $scope.addTodo = addTodo;
+    $scope.newTodo = {description: "", completed: false, image: ""};
 
     function addTodo() {
-      vm.allTodos.push(vm.newTodo)
-      vm.newTodo = {description: "", completed: false, image: ""}
+      $scope.allTodos.push($scope.newTodo)
+      $scope.newTodo = {description: "", completed: false, image: ""}
     }
   }
 }());
